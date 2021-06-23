@@ -42,6 +42,7 @@ for i in range(1, pg_amount+1):
             Grupo = ""
             Periodo =""
             FechaUlt = ""
+            Estado = ""
             Completo = 0
             for Input in Inputs:
                 Input = str(Input)
@@ -50,6 +51,9 @@ for i in range(1, pg_amount+1):
                     Completo+=1
                 elif Input.__contains__('<input name="SumIni"'):
                     Descripcion=Input[42:-3]
+                    Completo+=1
+                elif Input.__contains__('<input name="CodUltEsta"'):
+                    Estado=Input[46:-3]
                     Completo+=1
                 elif Input.__contains__('<input name="DesPropo"'):
                     Propone=Input[44:-3]
@@ -63,15 +67,15 @@ for i in range(1, pg_amount+1):
                 elif Input.__contains__('<input name="FecUltimo"'):
                     FechaUlt=Input[42:-3]
                     Completo+=1   
-                if(Completo == 5):
+                if(Completo == 6):
                     break
             #print(texto)
             textito = texto[1].split("/")
-            Archivo = open("./Corpus/"+textito[0]+"-"+textito[1]+".txt","w")
+            Archivo = open("./Corpus-Transparencia/"+textito[0]+"-"+textito[1]+".txt","w")
             Archivo.write(
                 #"Número:"+textito[0]+"-"+textito[1]+"\n"+
-                "Fecha Pres.:"+texto[2]+"\n"+
-                "Estado:"+texto[3]+"\n"+
+                "Fecha Act. Estado:"+texto[2]+"\n"+
+                "Estado:"+Estado+"\n"+
                 "Titulo:"+Titulo+"\n"+
                 "Propone:"+Propone+"\n"+
                 "Grupo Parlamentario:"+Grupo+"\n"+
