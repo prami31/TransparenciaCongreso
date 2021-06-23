@@ -38,6 +38,10 @@ for i in range(1, pg_amount+1):
             Inputs = page.find_all("input")
             Titulo = ""
             Descripcion = ""
+            Propone = ""
+            Grupo = ""
+            Periodo =""
+            FechaUlt = ""
             Completo = 0
             for Input in Inputs:
                 Input = str(Input)
@@ -47,17 +51,35 @@ for i in range(1, pg_amount+1):
                 elif Input.__contains__('<input name="SumIni"'):
                     Descripcion=Input[42:-3]
                     Completo+=1
-                if(Completo == 2):
+                elif Input.__contains__('<input name="DesPropo"'):
+                    Propone=Input[44:-3]
+                    Completo+=1 
+                elif Input.__contains__('<input name="DesGrupParla"'):
+                    Grupo=Input[48:-3]
+                    Completo+=1 
+                elif Input.__contains__('<input name="DesPerio_1"'):
+                    Periodo=Input[46:-3]
+                    Completo+=1
+                elif Input.__contains__('<input name="FecUltimo"'):
+                    FechaUlt=Input[42:-3]
+                    Completo+=1   
+                if(Completo == 5):
                     break
-            #print("Titulo: "+ Titulo)
-            #print(Descripcion)
+            #print(texto)
             textito = texto[1].split("/")
             Archivo = open("./Corpus/"+textito[0]+"-"+textito[1]+".txt","w")
-            Archivo.write(Titulo+"\n"+Descripcion)
+            Archivo.write(
+                #"Número:"+textito[0]+"-"+textito[1]+"\n"+
+                "Fecha Pres.:"+texto[2]+"\n"+
+                "Estado:"+texto[3]+"\n"+
+                "Titulo:"+Titulo+"\n"+
+                "Propone:"+Propone+"\n"+
+                "Grupo Parlamentario:"+Grupo+"\n"+
+                "Periodo:"+Periodo+"\n"+
+                "Descripcion:"+Descripcion+"\n")
+                #"Fecha Ult.:"+FechaUlt+"\n")
             Archivo.close
-            #print("====================")
-        #print(texto) 
-    time.sleep(4)
+    #time.sleep(4)
     home_link = "https://www2.congreso.gob.pe/Sicr/TraDocEstProc/CLProLey2016.nsf/Local%20Por%20Numero%20Inverso?OpenView"
     driver.get(home_link)
     for i in range(0,i):
@@ -66,4 +88,4 @@ for i in range(1, pg_amount+1):
     page = BeautifulSoup(driver.page_source,'html.parser')
     tables = page.find_all("table")
     #print(page)
-print(count)
+#print(count)
