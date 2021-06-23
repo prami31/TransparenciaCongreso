@@ -3,8 +3,7 @@
 _**1. Construcción del corpus:** se hace la lectura de todos los datos crudos de las leyes del congreso peruano._
 
 ## Construido con 🛠️
-* [Selenium]
- (https://selenium-python.readthedocs.io/index.html) - Entorno de Pruebas de Software
+* [Selenium](https://selenium-python.readthedocs.io/index.html) - Entorno de Pruebas de Software
 * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - Libreria de Python(Parsing)
 
 ## Autores ✒️
