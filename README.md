@@ -10,7 +10,7 @@
 * [Spacy](https://spacy.io/) -Extracción de información o comprensión del lenguaje natural. 
 * [NLTK](https://www.nltk.org/) -Define StopWords base en español
 * [Scikit-learn](https://scikit-learn.org/stable/) -Aprendizaje automático
-* [Worcloud](https://pypi.org/project/wordcloud/) -Libreria para hacer nubes de palabras
+* [Wordcloud](https://pypi.org/project/wordcloud/) -Libreria para hacer nubes de palabras
 
 ## Autores ✒️
 * **Enrique Flores** - [EnriqueFloresAq](https://github.com/EnriqueFloresAq)
