@@ -1,10 +1,16 @@
 # Transparencia Congreso - Relaciones
 ## Procesamiento de Lenguaje Natural - Grupo 5
-_**1. Construcción del corpus:** se hace la lectura de todos los datos crudos de las leyes del congreso peruano._
-
+* **1. Construcción del corpus:** se hace la lectura de todos los datos crudos de las leyes del congreso peruano.
+* **2. Preprocesamiento del corpus:** se trata la información eliminando caracteres especiales, números, y stopwords del corpus.
+* **3. Construcción del BOW:** se genera la matriz de BOW para contar las apariciones de cada palabra.
+* **4. Weigthing Schema:** TF y TF-IDF.
 ## Construido con 🛠️
 * [Selenium](https://selenium-python.readthedocs.io/index.html) - Entorno de Pruebas de Software
 * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - Libreria de Python(Parsing)
+* [Spacy](https://spacy.io/) -Extracción de información o comprensión del lenguaje natural. 
+* [NLTK](https://www.nltk.org/) -Define StopWords base en español
+* [Scikit-learn](https://scikit-learn.org/stable/) -Aprendizaje automático
+* [Wordcloud](https://pypi.org/project/wordcloud/) -Libreria para hacer nubes de palabras
 
 ## Autores ✒️
 * **Enrique Flores** - [EnriqueFloresAq](https://github.com/EnriqueFloresAq)
