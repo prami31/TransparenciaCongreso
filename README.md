@@ -1,7 +1,7 @@
 # Transparencia Congreso - Relaciones
 ## Procesamiento de Lenguaje Natural - Grupo 5
 * **1. Construcción del corpus:** se hace la lectura de todos los datos crudos de las leyes del congreso peruano.
-* **2. Preprocesamiento del corpus:** se trata la información eliminando caracteres especiales, numeros, y stopwords del corpus.
+* **2. Preprocesamiento del corpus:** se trata la información eliminando caracteres especiales, números, y stopwords del corpus.
 * **3. Construcción del BOW:** se genera la matriz de BOW para contar las apariciones de cada palabra.
 * **4. Weigthing Schema:** TF y TF-IDF.
 ## Construido con 🛠️
