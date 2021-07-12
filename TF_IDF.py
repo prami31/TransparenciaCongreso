@@ -22,9 +22,8 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from PIL import Image
 
 # Nombrar archivos resultado
-NombreTotales = 'TFIDF-Ponderacion.csv'
-NombreMatriz = 'BOW_TFIDF.csv'
-NombreNube = 'WordCloudTFIDF.png'
+NombreTotales = 'TF_IDF.csv'
+NombreNube = 'tf_idfWordCloud.png'
 NombreArchivo = 'Corpus_Tratado.txt'
 
 # Descargamos soportes para la biblioteca NLTK
@@ -79,7 +78,7 @@ word_count = bow_corpus.fit_transform(corpus)
 count_tokens=bow_corpus.get_feature_names()
 corpus_vect = bow_corpus.transform(corpus)
 df_count_vect=pd.DataFrame(data=corpus_vect.toarray(),columns=count_tokens) 
-df_count_vect.to_csv(NombreMatriz) # Guardamos el BOW en archivo csv
+#df_count_vect.to_csv(NombreMatriz) # Guardamos el BOW en archivo csv
 
 tfidf_transformer = TfidfTransformer(smooth_idf=True,use_idf=True)
 tfidf_transformer.fit(word_count)
