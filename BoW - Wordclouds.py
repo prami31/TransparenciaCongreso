@@ -31,7 +31,7 @@ nltk.download('stopwords')
 stop_words = stopwords.words('spanish')
 
 #Extendemos stopWords
-words=['ley','propone','nacional','interés','pública','necesidad','artículo','declara','modifica','modificar','declarar','provincia','decreto','departamento','perú','distrito','artículos','así', 'año','través','núm','proponer','aahh','aautógrafa', 'público', 'establecer']
+words=['ley','propone','nacional','interés','pública','necesidad','artículo','declara','modifica','modificar','declarar','provincia','decreto','departamento','perú','distrito','artículos','así', 'año','través','núm','proponer','aahh','aautógrafa', 'público', 'establecer','aacuerdo','aaer','aarmada','aasi','abaastecimiento']
 stop_words.extend(words)
 
 # Leemos el CorpusTratado.txt
