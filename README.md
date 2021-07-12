@@ -4,6 +4,7 @@
 * **2. Preprocesamiento del corpus:** se trata la información eliminando caracteres especiales, números, y stopwords del corpus.
 * **3. Construcción del BOW:** se genera la matriz de BOW para contar las apariciones de cada palabra.
 * **4. Weigthing Schema:** TF y TF-IDF.
+
 ## Construido con 🛠️
 * [Selenium](https://selenium-python.readthedocs.io/index.html) - Entorno de Pruebas de Software
 * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - Libreria de Python(Parsing)
@@ -20,5 +21,6 @@
 * **Claudia Rojas** - [Claudiars20](https://github.com/Claudiars20)
 * **Milagros Yarahuaman** - [prami31](https://github.com/prami31)
 
+### BagOfWords 👜 : https://drive.google.com/file/d/1DFhuhs8_Qu0QfmJ3NG4P0FK4WZ8QRci1/view?usp=sharing
 ---
 ⌨️ con ❤️ por [Claudiars20](https://github.com/Claudiars20) 😊
