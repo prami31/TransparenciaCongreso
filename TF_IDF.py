@@ -22,7 +22,7 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from PIL import Image
 
 # Nombrar archivos resultado
-NombreTotales = 'TF_IDF.csv'
+NombreTotales = 'TFIDF.csv'
 NombreNube = 'tf_idfWordCloud.png'
 NombreArchivo = 'Corpus_Tratado.txt'
 
@@ -72,35 +72,50 @@ for i in range(0, len(df)):
     cadena = ' '.join(cad)
     corpus.append(cadena)
 
-# Creamos el BOW - TF-IDF del corpus 
-bow_corpus = TfidfVectorizer().fit(corpus)
-word_count = bow_corpus.fit_transform(corpus)
+# Creamor el BOW del corpus 
+bow_corpus = CountVectorizer().fit(corpus)
 count_tokens=bow_corpus.get_feature_names()
+word_count = bow_corpus.fit_transform(corpus)
 corpus_vect = bow_corpus.transform(corpus)
-df_count_vect=pd.DataFrame(data=corpus_vect.toarray(),columns=count_tokens) 
+df_count_vect=pd.DataFrame(data=corpus_vect.toarray(),columns=count_tokens)
+display(df_count_vect)  
 #df_count_vect.to_csv(NombreMatriz) # Guardamos el BOW en archivo csv
 
+
+# Creamos el ITF del corpus 
 tfidf_transformer = TfidfTransformer(smooth_idf=True,use_idf=True)
 tfidf_transformer.fit(word_count)
 df_idf = pd.DataFrame(tfidf_transformer.idf_,index=bow_corpus.get_feature_names(),columns=['idf'])
 df_idf.sort_values(by=['idf'])
 df_idf.to_csv('./ITF.csv')
 
+# Creamos el BOW - TF-IDF del corpus 
+bow_corpus = TfidfVectorizer().fit(corpus)
+word_count = bow_corpus.fit_transform(corpus)
+count_tokens=bow_corpus.get_feature_names()
+corpus_vect = bow_corpus.transform(corpus)
+#print(format(corpus_vect.toarray()))
+print(count_tokens)
+#df_count_vect.to_csv(NombreMatriz) # Guardamos el BOW en archivo csv
+
+df_count_vect=pd.DataFrame(data=corpus_vect.toarray(),columns=count_tokens)
+
+display(df_count_vect)  
+#df.to_excel('./fda2.xlsx')
+#df_count_vect.to_csv('./alv2.csv')
 count_words = np.asarray(corpus_vect.sum(axis=0))[0]
 diccionario = {count_tokens[n]: count_words[n] for n in range(len(count_tokens))}
-# Se guarda el diccionario de las apariciones totales en el corpus
-with open(NombreTotales, 'w') as f:
-    for key in diccionario.keys():
-        f.write("%s,%s\n"%( key, diccionario[key]))
-
-# Mostramos las 30 palabras que más se repiten 
+#print(diccionario)
 sort = sorted(diccionario.items(),key=operator.itemgetter(1),reverse=True)
 print(sort[0:30])
-# Mostramos la nube de palabras
+
 wordcloud = WordCloud(font_path = 'calibri',width=900,height=500,background_color='white',colormap='Dark2')#mask=peru_mask
 wordcloud.generate_from_frequencies(frequencies=diccionario)
 plt.figure()
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
-plt.savefig(NombreNube)
 plt.show()
+
+with open('TFIDF.csv', 'w') as f:
+    for key in diccionario.keys():
+        f.write("%s,%s\n"%(key, diccionario[key]))
