@@ -81,6 +81,12 @@ corpus_vect = bow_corpus.transform(corpus)
 df_count_vect=pd.DataFrame(data=corpus_vect.toarray(),columns=count_tokens) 
 df_count_vect.to_csv(NombreMatriz) # Guardamos el BOW en archivo csv
 
+tfidf_transformer = TfidfTransformer(smooth_idf=True,use_idf=True)
+tfidf_transformer.fit(word_count)
+df_idf = pd.DataFrame(tfidf_transformer.idf_,index=bow_corpus.get_feature_names(),columns=['idf'])
+df_idf.sort_values(by=['idf'])
+df_idf.to_csv('./ITF.csv')
+
 count_words = np.asarray(corpus_vect.sum(axis=0))[0]
 diccionario = {count_tokens[n]: count_words[n] for n in range(len(count_tokens))}
 # Se guarda el diccionario de las apariciones totales en el corpus
