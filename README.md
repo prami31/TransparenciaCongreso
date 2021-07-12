@@ -22,6 +22,6 @@
 * **Milagros Yarahuaman** - [prami31](https://github.com/prami31)
 
 ### BagOfWords 👜 : https://drive.google.com/file/d/1DFhuhs8_Qu0QfmJ3NG4P0FK4WZ8QRci1/view?usp=sharing
-
+### Presentación Primer Entregable 💻 : https://www.canva.com/design/DAEjw5M_YzE/xbVWRsAOwQjYSyouJXpJoQ/view?utm_content=DAEjw5M_YzE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
 ---
 ⌨️ con ❤️ por [Claudiars20](https://github.com/Claudiars20) 😊
