@@ -81,7 +81,6 @@ df_count_vect=pd.DataFrame(data=corpus_vect.toarray(),columns=count_tokens)
 display(df_count_vect)  
 #df_count_vect.to_csv(NombreMatriz) # Guardamos el BOW en archivo csv
 
-
 # Creamos el ITF del corpus 
 tfidf_transformer = TfidfTransformer(smooth_idf=True,use_idf=True)
 tfidf_transformer.fit(word_count)
@@ -101,8 +100,6 @@ print(count_tokens)
 df_count_vect=pd.DataFrame(data=corpus_vect.toarray(),columns=count_tokens)
 
 display(df_count_vect)  
-#df.to_excel('./fda2.xlsx')
-#df_count_vect.to_csv('./alv2.csv')
 count_words = np.asarray(corpus_vect.sum(axis=0))[0]
 diccionario = {count_tokens[n]: count_words[n] for n in range(len(count_tokens))}
 #print(diccionario)
